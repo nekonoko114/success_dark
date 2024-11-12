@@ -6,9 +6,9 @@
     共通パーツの指定 section__area section__title inner など
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
-$ff-noto-sans-japanese: "Noto Sans JP", sans-serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+$ff-noto-sans-japanese: "Noto Serif JP", serif;
 *,
 ::before,
 ::after {
@@ -28,8 +28,9 @@ body {
 }
 
 body {
-  color: #333;
-  font-family: $ff-noto-sans-japanese;
+  color: $main-color;
+  font-size: 16px;
+  font-family: "Noto Serif JP", serif;
   letter-spacing: 0.1rem;
   line-height: 1.5;
   @include mq() {
@@ -79,5 +80,5 @@ ol {
 
 a {
   text-decoration: none;
-  color: $font-base-color;
+  color: $main-color;
 }

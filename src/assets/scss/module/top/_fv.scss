@@ -1,0 +1,38 @@
+@use "../color" as *;
+@use "../mixin" as *;
+@use "../setting" as *;
+@use "../variable" as *;
+
+.fv{
+    background: $main-color;
+    height: 80vh;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+
+    &__bg {
+
+    }
+
+    &__img {
+
+    }
+
+    &__content {
+        position: absolute;
+        top: 40%;
+        right: 10%;
+        transform: translateY(-40%);
+
+        &__ttl {
+            color: $rich-font;
+            // font-family: "Noto Serif JP", serif;
+            font-size: 60px;
+            text-align: right;
+        }
+
+    }
+
+    
+    
+
+  }

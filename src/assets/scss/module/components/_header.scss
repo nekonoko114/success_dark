@@ -2,3 +2,38 @@
 @use "../mixin" as *;
 @use "../color" as *;
 @use "../variable" as *;
+
+
+.header {
+    // height: 100px;
+    background: $main-color;
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 100px 20px;
+        align-items: center;
+    }
+
+    &__site__name {
+        a {
+            color: #fff;
+        }
+    }
+
+    &__nav {
+        
+    }
+
+    &__items {
+        color: #fff;
+        display: flex;
+    }
+
+    &__item {
+        color: #fff;
+        margin-left: 40px;
+        a {
+            color: #fff;
+        }
+    }
+}
