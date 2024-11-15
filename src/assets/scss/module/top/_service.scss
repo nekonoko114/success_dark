@@ -47,21 +47,21 @@
     }
 
     &__list {
-        width: calc(100% / 4 - 60px);
-        margin: 30px;
+        width: calc(100% / 4 - 40px);
+        margin: 20px;
         background: #FBF7EA;
 
         @include mq() {
             font-size: 32px;
-            margin: 16px;
-            width: calc(100% / 2 - 32px);
+            margin: 8px;
+            width: calc(100% / 2 - 16px);
             height: auto;
         }
         &:nth-child(4n + 1) {
-            margin: 30px;
+            margin: 20px;
 
             @include mq() {
-                margin: 16px;
+                margin: 8px;
             }
             
         }
@@ -86,7 +86,11 @@
                 left: 0;
                 bottom: -99px;
                 background: #1B435D;
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 60%);
+
+                @include mq() {
+                    clip-path: polygon(0 0, 100% 0, 100% 0, 0 60%);
+                }
             }
 
             &__ttl,
@@ -115,10 +119,10 @@
 
 
         &__body {
-            padding: 120px 20px 20px 20px;
+            padding: 70px 20px 20px 20px;
 
             @include mq() {
-                padding: 100px 10px 20px 10px;
+                padding: 55px 4px 10px 4px;
             }
 
             
@@ -129,6 +133,7 @@
                 @include mq() {
                     font-size: 10px;
                     text-align: center;
+                    margin-bottom: 8px;
                 }
             }
 
@@ -140,17 +145,17 @@
                 @include mq() {
                     font-size: 16px;
                     text-align: center;
+                    margin-bottom: 8px;
                 }
             }
 
             &__txt {
-                margin-top: 30px;
                 font-size: 16px;
-                margin-bottom: 16px;
 
                 @include mq() {
                     font-size: 12px;
                     text-align: center;
+                    margin-bottom: 0;
                 }
             }
 
@@ -208,26 +213,37 @@
 
 
 .second-diagonal {
-    background: linear-gradient(top, $main-color 50% , transpa);
     width: 100%;
     height: 700px;
+    
+    @include bg-img($path: '../images/top/dark-service-bg.jpg');
+    
+    // background-attachment: fixed;
     position: relative;
-    @include mq() {
-        height: 300px;
-    }
     
-    
-
+    &::before,
     &::after {
         position: absolute;
         content: "";
         width: 100%;
         height: 100%;
-        left: 0;
         top: 0;
-        @include bg-img($path: '../images/top/dark-service-bg.jpg');
-        clip-path: polygon(0 33%, 100% 0, 100% 100%, 0 86%);
-        background-attachment: fixed;
+        left: 0;
+        background: #fff;
         
+    } 
+
+    &::before {
+        clip-path: polygon(0 0, 0 25%, 100% 0);
     }
+
+    &::after {
+        clip-path: polygon(0 100%, 0 75%, 100% 100%);
+    }
+
+
+    @include mq() {
+        height: 300px;
+    }
+    
 }

@@ -24,7 +24,8 @@
         background: $main-color;
 
         @include mq() {
-            top: -52%;
+            top: -5%;
+            height: 50px;
         }
 
     }

@@ -107,10 +107,9 @@
 
     &__img {
         width: 300px;
-        height: 500px;
-        border: 1px solid $rich-font;
-        border-radius: 20%;
-        margin-left: 50px;
+        // height: 500px;
+        
+        margin-left: 50px;;
 
         @include mq() {
             width: 200px;
@@ -121,7 +120,12 @@
 
     
         img {
-
+            border-top: 5px solid $main-color;
+            border-right: 5px solid $main-color;
+            border-bottom: 5px solid $rich-font;
+            border-left: 5px solid $rich-font;
+            // border-top: 5px solid $main-color;
+            border-radius: 10%;
         }
 
         
@@ -175,10 +179,10 @@
         clip-path: polygon(100% 0, 0 47%, 0 3%, 100% 0);
 
         background-image:
-    radial-gradient($main-color 3%, transparent 3%),
-    radial-gradient($main-color 2%, transparent 2%);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+        radial-gradient($main-color 3%, transparent 3%),
+        radial-gradient($main-color 2%, transparent 2%);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
 
         @include mq() {
             height: 220px;   
