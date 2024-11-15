@@ -158,12 +158,12 @@ const imgImagemin = () => {
         }
       )
     )
-    .pipe(
-      webp({
-        quality: 65,
-        method: 6,
-      })
-    )
+    // .pipe(
+    //   webp({
+    //     quality: 65,
+    //     method: 6,
+    //   })
+    // )
     .pipe(dest(destPath.img));
 };
 //htmlコンパイル＆圧縮

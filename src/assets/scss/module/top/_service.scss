@@ -1,0 +1,233 @@
+@use "../color" as *;
+@use "../mixin" as *;
+@use "../setting" as *;
+@use "../variable" as *;
+
+
+.service {
+    background: $main-color;
+    width: 100%;
+    position: relative;
+    
+    &__wrapper {
+        padding: 160px 40px 160px 80px;
+
+        @include mq() {
+            padding: 160px 10px 160px 10px;
+        }
+
+    }
+
+    &__ttl {
+        // margin-top: 160px;
+        font-size: 64px;
+        color: $rich-font;
+        
+
+        @include mq() {
+            font-size: 32px;
+        }
+    }
+
+    &__subttl {
+        color: $rich-font;
+        font-size: 32px;
+        margin-left: 20px;
+
+        @include mq() {
+            font-size: 18px;
+        }
+    }
+
+    &__lists {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        // justify-content: space-around;
+    }
+
+    &__list {
+        width: calc(100% / 4 - 60px);
+        margin: 30px;
+        background: #FBF7EA;
+
+        @include mq() {
+            font-size: 32px;
+            margin: 16px;
+            width: calc(100% / 2 - 32px);
+            height: auto;
+        }
+        &:nth-child(4n + 1) {
+            margin: 30px;
+
+            @include mq() {
+                margin: 16px;
+            }
+            
+        }
+        &__head {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 150px;
+            background: #1B435D;
+            position: relative;
+
+            @include mq() {
+                height: 100px;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100px;
+                left: 0;
+                bottom: -99px;
+                background: #1B435D;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+            }
+
+            &__ttl,
+            &__sttl {
+                color: $rich-font;
+
+            }
+
+            &__ttl{
+                font-size: 24px;
+                margin-bottom: 16px;
+
+                @include mq() {
+                    font-size: 18px;
+                }
+            }
+            
+            &__sttl {
+                font-size: 16px;
+                @include mq() {
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+
+        &__body {
+            padding: 120px 20px 20px 20px;
+
+            @include mq() {
+                padding: 100px 10px 20px 10px;
+            }
+
+            
+            &__sttl {
+                font-size: 12px;
+                margin-bottom: 16px;
+
+                @include mq() {
+                    font-size: 10px;
+                    text-align: center;
+                }
+            }
+
+            &__ttl {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 24px;
+
+                @include mq() {
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+
+            &__txt {
+                margin-top: 30px;
+                font-size: 16px;
+                margin-bottom: 16px;
+
+                @include mq() {
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+
+             &__link {
+                display: inline-block;
+                padding: 10px;
+                transition:  all 0.3s ease 0s;
+                transform: translateX(0);
+                width: 100%;
+                text-align: right;
+               &:hover {
+                transform: translateX(10px);
+               } 
+             }
+            
+        }
+
+    }
+
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px); // 右からスライドイン
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service__list {
+    opacity: 0; // 初期状態は非表示
+    transform: translateX(100px); // スライドイン前の位置
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service__list.is-visible {
+    opacity: 1;
+    transform: translateX(0); // 元の位置にスライドイン
+    animation: slideIn 0.6s ease forwards;
+}
+
+
+
+.service__ttl,
+.service__subttl {
+    opacity: 0; // 初期状態は非表示
+    visibility: hidden; // 完全に非表示にする
+    overflow: hidden; // アニメーション中にテキストがはみ出さないようにする
+    display: block; // ブロック要素にして縦に配置
+    transition: opacity 0.6s ease; // 表示をスムーズに
+}
+
+
+.second-diagonal {
+    background: linear-gradient(top, $main-color 50% , transpa);
+    width: 100%;
+    height: 700px;
+    position: relative;
+    @include mq() {
+        height: 300px;
+    }
+    
+    
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @include bg-img($path: '../images/top/dark-service-bg.jpg');
+        clip-path: polygon(0 33%, 100% 0, 100% 100%, 0 86%);
+        background-attachment: fixed;
+        
+    }
+}

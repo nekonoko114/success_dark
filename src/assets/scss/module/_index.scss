@@ -12,4 +12,9 @@
 //topページの読み込み
 
 @use "./top/fv";
+@use "./top/greeting";
+@use "./top/service";
+@use "./top/business";
+@use "./top/news";
+@use "./top/topContact";
 
